@@ -8,11 +8,11 @@ CREATE TABLE Manufacturer (
 
 CREATE TABLE Vehicle (
 	ID int(10) PRIMARY KEY,
-	ManufacturerID varchar(25) NOT NULL,
+	ManufacturerID int(10) NOT NULL,
 	Model varchar(30) NOT NULL,
 	ModelYear int(10) NOT NULL,
 	Colour varchar(25) NOT NULL,
-	CONSTRAINT FK_Vehicle_Manufacturer FOREIGN KEY (ManufacturerID) REFERENCES Manufacturer(ID);
+	CONSTRAINT FK_Vehicle_Manufacturer FOREIGN KEY (ManufacturerID) REFERENCES Manufacturer(ID)
 );
 
 INSERT INTO Manufacturer (ID, Name)
