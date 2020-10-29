@@ -1,21 +1,39 @@
 DROP TABLE IF EXISTS Vehicle;
+DROP TABLE IF EXISTS Manufacturer;
+
+CREATE TABLE Manufacturer (
+	ID int(10) PRIMARY KEY,
+	Name varchar(25) NOT NULL
+);
 
 CREATE TABLE Vehicle (
 	ID int(10) PRIMARY KEY,
-	Manufacturer varchar(25) NOT NULL,
+	ManufacturerID varchar(25) NOT NULL,
 	Model varchar(30) NOT NULL,
 	ModelYear int(10) NOT NULL,
-	Colour varchar(25) NOT NULL
+	Colour varchar(25) NOT NULL,
+	CONSTRAINT FK_Vehicle_Manufacturer FOREIGN KEY (ManufacturerID) REFERENCES Manufacturer(ID);
 );
 
-INSERT INTO Vehicle (ID, Manufacturer, Model, ModelYear, Colour)
+INSERT INTO Manufacturer (ID, Name)
+VALUES
+(1, 'Plymouth'),
+(2, 'Honda'),
+(3, 'Volkswagen'),
+(4, 'Dodge'),
+(5, 'Honda'),
+(6, 'Ferrari'),
+(7, 'Mitsubishi'),
+(8, 'Ford');
+
+INSERT INTO Vehicle (ID, ManufacturerID, Model, ModelYear, Colour)
 VALUES 
-	(1, 'Plymouth', 'Barracuda', 1970, 'Green'),
-	(2, 'Honda', 'Civic', 2010, 'Blue'),
-	(3, 'Volkswagen', 'Golf', 2008, 'White'),
-	(4, 'Dodge', 'Stealth', 1992, 'Blue'),
-	(5, 'Honda', 'NSX', 1992, 'Black'),
-	(6, 'Ferrari', '428', 2010, 'Red'),
-	(7, 'Mitsubishi', 'FTO', 1998, 'Black'),
-	(8, 'Ford', 'GT40', 1964, 'Blue')
+	(1, 1, 'Barracuda', 1970, 'Green'),
+	(2, 2, 'Civic', 2010, 'Blue'),
+	(3, 3, 'Golf', 2008, 'White'),
+	(4, 4, 'Stealth', 1992, 'Blue'),
+	(5, 5, 'NSX', 1992, 'Black'),
+	(6, 6, '428', 2010, 'Red'),
+	(7, 7, 'FTO', 1998, 'Black'),
+	(8, 8, 'GT40', 1964, 'Blue')
 ;

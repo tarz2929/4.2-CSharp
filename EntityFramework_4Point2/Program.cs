@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityFramework_4Point2.Models;
+using System;
 
 namespace EntityFramework_4Point2
 {
@@ -6,7 +7,18 @@ namespace EntityFramework_4Point2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            VehicleContext context = new VehicleContext();
+
+            context.Vehicle.Add(new Vehicle()
+            {
+                Id = 9,
+                Manufacturer = "Chevrolet",
+                Model = "Corvette",
+                ModelYear = 1959,
+                Colour = "Red"
+            });
+
+            context.SaveChanges();
         }
     }
 }
