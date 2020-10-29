@@ -1,3 +1,5 @@
+-- Used Database "dbfirst_4point2"
+
 DROP TABLE IF EXISTS Vehicle;
 DROP TABLE IF EXISTS Manufacturer;
 
