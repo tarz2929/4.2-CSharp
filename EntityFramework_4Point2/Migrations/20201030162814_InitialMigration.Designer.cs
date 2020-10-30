@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFramework_4Point2.Migrations
 {
     [DbContext(typeof(DealershipContext))]
-    [Migration("20201030160758_InitialMigration")]
+    [Migration("20201030162814_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
