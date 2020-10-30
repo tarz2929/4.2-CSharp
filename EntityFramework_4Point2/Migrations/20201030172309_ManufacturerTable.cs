@@ -25,6 +25,8 @@ namespace EntityFramework_4Point2.Migrations
                     ID = table.Column<int>(type: "int(10)", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "varchar(30)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:Collation", "utf8mb4_general_ci")
                 },
                 constraints: table =>
                 {

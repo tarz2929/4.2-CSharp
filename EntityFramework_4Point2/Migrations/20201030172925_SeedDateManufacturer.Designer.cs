@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFramework_4Point2.Migrations
 {
     [DbContext(typeof(DealershipContext))]
-    [Migration("20201030172014_ManufacturerTable")]
-    partial class ManufacturerTable
+    [Migration("20201030172925_SeedDateManufacturer")]
+    partial class SeedDateManufacturer
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,30 @@ namespace EntityFramework_4Point2.Migrations
                         .HasColumnType("int(10)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(30)");
+                        .HasColumnType("varchar(30)")
+                        .HasAnnotation("MySql:CharSet", "utf8mb4")
+                        .HasAnnotation("MySql:Collation", "utf8mb4_general_ci");
 
                     b.HasKey("ID");
 
                     b.ToTable("manufacturer");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = -1,
+                            Name = "Ford"
+                        },
+                        new
+                        {
+                            ID = -2,
+                            Name = "Chevrolet"
+                        },
+                        new
+                        {
+                            ID = -3,
+                            Name = "Dodge"
+                        });
                 });
 
             modelBuilder.Entity("EntityFramework_4Point2.Models.Vehicle", b =>

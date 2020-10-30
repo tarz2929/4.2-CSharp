@@ -28,6 +28,30 @@ namespace EntityFramework_4Point2.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Manufacturer>(entity =>
+            {
+                entity.Property(e => e.Name)
+                .HasCharSet("utf8mb4")
+                .HasCollation("utf8mb4_general_ci");
+
+                entity.HasData(
+                    new Manufacturer()
+                    {
+                        ID = -1,
+                        Name = "Ford"
+                    },
+                    new Manufacturer()
+                    {
+                        ID = -2,
+                        Name = "Chevrolet"
+                    },
+                    new Manufacturer()
+                    {
+                        ID = -3,
+                        Name = "Dodge"
+                    }
+                );
+            });
             modelBuilder.Entity<Vehicle>(entity =>
             {
                 string keyName = "FK_" + nameof(Vehicle) +
