@@ -74,6 +74,9 @@ namespace EntityFramework_4Point2.Models
                 .HasForeignKey(thisEntity => thisEntity.ManufacturerID)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName(keyName);
+
+                // In-class Practice 2:
+                // Add seed data for 5 vehicles similarly to the manufacturers above.
             });
         }
     }
