@@ -30,11 +30,10 @@ namespace EntityFramework_4Point2.Models
         {
             modelBuilder.Entity<Vehicle>(entity =>
             {
-                // These SHOULD be set automatically. If you want to play around with it by removing these and verify this version of EF works that way, feel free. 
-                entity.Property(e => e.Manufacturer)
-                .HasCharSet("utf8mb4")
-                .HasCollation("utf8mb4_general_ci");
+                string keyName = "FK_" + nameof(Vehicle) +
+                    "_" + nameof(Manufacturer);
 
+                // These SHOULD be set automatically. If you want to play around with it by removing these and verify this version of EF works that way, feel free. 
                 entity.Property(e => e.Model)
                 .HasCharSet("utf8mb4")
                 .HasCollation("utf8mb4_general_ci");
@@ -42,6 +41,15 @@ namespace EntityFramework_4Point2.Models
                 entity.Property(e => e.Colour)
                 .HasCharSet("utf8mb4")
                 .HasCollation("utf8mb4_general_ci");
+
+                entity.HasIndex(e => e.ManufacturerID)
+                .HasName(keyName);
+
+                entity.HasOne(thisEntity => thisEntity.Manufacturer)
+                .WithMany(parent => parent.Vehicles)
+                .HasForeignKey(thisEntity => thisEntity.ManufacturerID)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName(keyName);
             });
         }
     }
