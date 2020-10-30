@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace EntityFramework_4Point2.Models
 {
-    class DealershipContext
+    class DealershipContext : DbContext
     {
+
     }
 }

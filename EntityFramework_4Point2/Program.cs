@@ -12,6 +12,9 @@ namespace EntityFramework_4Point2
             Step 3: Per Class:
                 Step 3a: Name the table for the model class.
                 Step 3b: Declare primary key property.
+                Step 3c: Specify other columns.
+            Step 4: Setup Context:
+                Step 4a: Inherit from DbContext.
             */
         }
     }

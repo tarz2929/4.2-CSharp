@@ -14,7 +14,17 @@ namespace EntityFramework_4Point2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
+        [Column(TypeName = "varchar(30)")]
+        public string Manufacturer { get; set; }
 
+        [Column(TypeName = "varchar(30)")]
+        public string Model { get; set; }
+
+        [Column(TypeName = "int(10)")]
+        public int ModelYear { get; set; }
+
+        [Column(TypeName = "varchar(30)")]
+        public string Colour { get; set; }
 
     }
 }
