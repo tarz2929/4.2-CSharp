@@ -15,6 +15,10 @@ namespace EntityFramework_4Point2
                 Step 3c: Specify other columns.
             Step 4: Setup Context:
                 Step 4a: Inherit from DbContext.
+                Step 4b: Declare table DbSets.
+                Step 4c: Implement OnConfiguring with connection string.
+                Step 4d: Implement OnModelCreating with string collation and foreign keys.
+            Step 5: Create a migration using "dotnet ef migrations add InitialMigration" in Package Manager Console (in the project folder).
             */
         }
     }
