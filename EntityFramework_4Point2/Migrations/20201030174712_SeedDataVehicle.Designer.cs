@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFramework_4Point2.Migrations
 {
     [DbContext(typeof(DealershipContext))]
-    [Migration("20201030172925_SeedDateManufacturer")]
-    partial class SeedDateManufacturer
+    [Migration("20201030174712_SeedDataVehicle")]
+    partial class SeedDataVehicle
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -79,6 +79,48 @@ namespace EntityFramework_4Point2.Migrations
                         .HasName("FK_Vehicle_Manufacturer");
 
                     b.ToTable("vehicle");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = -1,
+                            Colour = "Blue",
+                            ManufacturerID = -1,
+                            Model = "Fusion",
+                            ModelYear = 2010
+                        },
+                        new
+                        {
+                            ID = -2,
+                            Colour = "Black",
+                            ManufacturerID = -1,
+                            Model = "Escape",
+                            ModelYear = 2014
+                        },
+                        new
+                        {
+                            ID = -3,
+                            Colour = "Red",
+                            ManufacturerID = -2,
+                            Model = "Cruze",
+                            ModelYear = 2012
+                        },
+                        new
+                        {
+                            ID = -4,
+                            Colour = "Black",
+                            ManufacturerID = -3,
+                            Model = "Ram",
+                            ModelYear = 2018
+                        },
+                        new
+                        {
+                            ID = -5,
+                            Colour = "Blue",
+                            ManufacturerID = -3,
+                            Model = "Charger",
+                            ModelYear = 2016
+                        });
                 });
 
             modelBuilder.Entity("EntityFramework_4Point2.Models.Vehicle", b =>

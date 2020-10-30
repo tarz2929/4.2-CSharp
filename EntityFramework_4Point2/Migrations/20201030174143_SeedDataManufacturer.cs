@@ -2,7 +2,7 @@
 
 namespace EntityFramework_4Point2.Migrations
 {
-    public partial class SeedDateManufacturer : Migration
+    public partial class SeedDataManufacturer : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -26,6 +26,7 @@ namespace EntityFramework_4Point2
             -Create the navigation property in the parent model (plural).
             -Point the [InverseProperty]'s at one another.
             -Construct the parent class by setting the navigation property to a new HashSet.
+            -Configure entity.HasOne().WithMany() in context.
             */
         }
     }
